@@ -1,0 +1,37 @@
+mutation UpdateJob($jobInput: UpdateFetchJobInput!) {
+  updateFetchJob(jobInput: $jobInput) {
+    jobId
+    name
+    mode
+    platform
+    state
+    startTime
+    settings {
+      repoCount
+      maxMRs
+      searchTerm
+      programmingLanguage
+    }
+    requestedFields
+    rawQuery
+  }
+}
+
+============================================================================
+
+{
+  "jobInput": {
+    "jobId": "xxx",
+    "name": "Updated Job",
+    "mode": "ASSISTANT",
+    "platform": "GITHUB",
+    "fetcherSettings": {
+      "repoCount": 5,
+      "maxMRs": 5,
+      "searchTerm": "test",
+      "programmingLanguage": "Python"
+    },
+    "requestedFields": ["name", "description", "starCount"],
+    "rawQuery": null
+  }
+}

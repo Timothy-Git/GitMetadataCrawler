@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+hide empty description
+'left to right direction
+
+state c <<choice>>
+
+[*] --> CREATED : create_job(job)
+CREATED --> RUNNING : start_job(job)
+CREATED --> CREATED : update_job(job)
+RUNNING --> STOPPED : stop_job(job_id)
+STOPPED --> RUNNING : start_job(job_id)
+STOPPED -up-> CREATED : update_job(job)
+RUNNING --> c
+c --> FAILURE : [fetcher results not available]
+c --> SUCCESSFUL : [fetcher results available]
+SUCCESSFUL --> [*]
+FAILURE --> RUNNING : start_job(job_id)
+FAILURE --> CREATED : update_job(job_id)
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+hide empty members
+
+class BaseFetcher {
+}
+
+class BaseGraphQLFetcher {
+}
+
+class BaseRestFetcher {
+}
+
+class GitHubFetcher {
+}
+
+class GitLabFetcher {
+}
+
+class BitbucketFetcher {
+}
+
+BaseGraphQLFetcher -up-|> BaseFetcher
+BaseRestFetcher -up-|> BaseFetcher
+GitHubFetcher -up-|> BaseGraphQLFetcher
+GitLabFetcher -up-|> BaseGraphQLFetcher
+BitbucketFetcher -up-|> BaseRestFetcher
+@enduml

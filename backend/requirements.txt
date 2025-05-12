@@ -1,0 +1,13 @@
+pyyaml==6.0.2
+strawberry-graphql==0.258.0
+fastapi==0.115.6
+uvicorn==0.34.0
+requests==2.32.3
+pymongo==4.10.1
+pydantic==2.10.6
+httpx==0.28.1
+tenacity==9.0.0
+pytest-asyncio==0.25.2
+pytest-mock==3.14.0
+mongomock==4.3.0
+pandas==2.2.3

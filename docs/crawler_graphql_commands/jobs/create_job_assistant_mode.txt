@@ -1,0 +1,65 @@
+mutation CreateJob($name: String!, $fetcherSettings: FetcherSettingsInput!, $requestedFields: [RequestedFieldInput!]!, $mode: FetchJobMode!, $platform: PlatformEnum!) {
+  createFetchJob(
+    name: $name
+    fetcherSettings: $fetcherSettings
+    requestedFields: $requestedFields
+    mode: $mode
+    platform: $platform
+  ) {
+    jobId
+    name
+    state
+    settings {
+      repoCount
+      maxMRs
+      searchTerm
+      programmingLanguage
+    }
+  }
+}
+
+============================================================================
+
+{
+  "name": "GitLab - Assistant mode",
+  "mode": "ASSISTANT",
+  "platform": "GITLAB",
+  "fetcherSettings": {
+    "repoCount": 5,
+    "maxMRs": 5,
+    "searchTerm": "",
+    "programmingLanguage": "python"
+  },
+  "requestedFields": [
+    {
+      "field": "name"
+    },
+    {
+      "field": "fullName"
+    },
+    {
+      "field": "description"
+    },
+    {
+      "field": "starCount"
+    },
+    {
+      "field": "createdAt"
+    },
+    {
+      "field": "updatedAt"
+    },
+    {
+      "field": "languages"
+    },
+    {
+      "field": "mergeRequests",
+      "subfields": [
+        "authorName",
+        "createdAt",
+        "description",
+        "title"
+      ]
+    }
+  ]
+}

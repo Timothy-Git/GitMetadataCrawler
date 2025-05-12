@@ -1,0 +1,9 @@
+mutation DeleteJob($jobId: String!) {
+  deleteFetchJob(jobId: $jobId)
+}
+
+============================================================================
+
+{
+  "jobId": "xxx"
+}

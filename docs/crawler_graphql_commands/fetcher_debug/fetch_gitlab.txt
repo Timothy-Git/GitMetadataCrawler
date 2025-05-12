@@ -1,0 +1,23 @@
+query FetchGitLab($settings: FetcherSettingsInput!, $platform: PlatformEnum!) {
+  fetchProjects(settings: $settings, platform: $platform) {
+    name
+    description
+    starCount
+    description
+    createdAt
+    updatedAt
+    languages
+  }
+}
+
+============================================================================
+
+{
+  "platform": "GITLAB",
+  "settings": {
+    "repoCount": 5,
+    "maxMRs": 5,
+    "searchTerm": "",
+    "programmingLanguage": "python"
+  }
+}

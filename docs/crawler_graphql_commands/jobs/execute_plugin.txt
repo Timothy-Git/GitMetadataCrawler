@@ -1,0 +1,23 @@
+mutation ExecutePlugin($jobId: String!, $plugin: PluginEnum!, $localExport: Boolean!) {
+  executePlugin(jobId: $jobId, plugin: $plugin, localExport: $localExport) {
+    urls {
+      name
+      url
+    }
+    message
+  }
+}
+
+============================================================================
+
+{
+  "jobId": "xxx",
+  "plugin": "LANGUAGE_METRICS",
+  "localExport": false
+}
+
+------
+Note:
+------
+The 'LANGUAGE_METRICS' plugin is only a demonstration here.
+If other plugins have been programmed, these can of course also be used

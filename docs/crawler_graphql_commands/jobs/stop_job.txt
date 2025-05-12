@@ -1,0 +1,14 @@
+mutation StopJob($jobId: String!) {
+  stopFetchJob(jobId: $jobId") {
+    jobId
+    name
+    platform
+    state
+  }
+}
+
+============================================================================
+
+{
+  "jobId": "xxx"
+}

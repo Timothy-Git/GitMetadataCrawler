@@ -1,0 +1,14 @@
+mutation StartJob($jobId: String!) {
+  startFetchJob(jobId: $jobId) {
+    jobId
+    name
+    platform
+    state
+  }
+}
+
+============================================================================
+
+{
+  "jobId": "xxx"
+}

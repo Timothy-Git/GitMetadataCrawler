@@ -1,0 +1,30 @@
+query GetJobsResult($jobId: String!) {
+  getFetchJobs(jobId: $jobId) {
+    repoData {
+      name
+      fullName
+      description
+      starCount
+      createdAt
+      updatedAt
+      languages
+      mergeRequests {
+        authorName
+        createdAt
+        description
+        title
+      }
+    }
+  }
+}
+
+============================================================================
+
+{
+  "jobId": ""
+}
+
+------
+Note:
+------
+To query all jobs, the jobId can also simply be empty

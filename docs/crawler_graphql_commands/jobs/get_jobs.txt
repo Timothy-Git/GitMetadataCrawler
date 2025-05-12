@@ -1,0 +1,22 @@
+query GetJobs($jobId: String!, $includeDebug: Boolean!) {
+  getFetchJobs(jobId: $jobId, includeDebug: $includeDebug) {
+    jobId
+    name
+    state
+    platform
+    mode
+    log
+  }
+}
+
+============================================================================
+
+{
+  "jobId": "",
+  "includeDebug": false
+}
+
+------
+Note:
+------
+To query all jobs, the jobId can also simply be empty

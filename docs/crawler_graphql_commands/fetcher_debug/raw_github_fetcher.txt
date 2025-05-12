@@ -1,0 +1,20 @@
+query RawGitHub {
+  bypassRawQuery(
+    platform: GITHUB,
+    rawQuery:
+    """
+      {
+      search(query: "graphql", type: REPOSITORY, first: 10) {
+        edges {
+          node {
+            ... on Repository {
+              name
+              description
+            }
+          }
+        }
+      }
+    }
+    """
+  )
+}

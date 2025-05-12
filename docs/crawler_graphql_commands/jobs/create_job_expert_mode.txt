@@ -1,0 +1,34 @@
+mutation CreateRawJob($name: String!, $mode: FetchJobMode!, $platform: PlatformEnum!) {
+  createFetchJob(
+    name: $name
+    mode: $mode
+    platform: $platform
+    rawQuery:
+    """
+      {
+      search(query: "graphql", type: REPOSITORY, first: 10) {
+        edges {
+          node {
+            ... on Repository {
+              name
+              description
+            }
+          }
+        }
+      }
+    }
+    """
+  ) {
+    jobId
+    name
+    state
+  }
+}
+
+============================================================================
+
+{
+  "name": "GitHub - Expert mode",
+  "mode": "EXPERT",
+  "platform": "GITHUB"
+}

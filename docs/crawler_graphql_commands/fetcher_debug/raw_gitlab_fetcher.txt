@@ -1,0 +1,42 @@
+query RawGitLab {
+  bypassRawQuery(
+    platform: GITLAB
+    rawQuery: """
+    {
+      projects(
+        first: 10
+        withMergeRequestsEnabled: true
+        programmingLanguageName: ""
+      ) {
+        nodes {
+          name
+          description
+          starCount
+          archived
+          createdAt
+          updatedAt
+          fullPath
+          topics
+          languages {
+            name
+          }
+          mergeRequests(first: 2) {
+            nodes {
+              author {
+                name
+              }
+              createdAt
+              description
+              title
+              diffStats
+              {
+                additions
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+  )
+}

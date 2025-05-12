@@ -1,0 +1,23 @@
+query FetchBitbucket($settings: FetcherSettingsInput!, $platform: PlatformEnum!) {
+  fetchProjects(settings: $settings, platform: $platform) {
+    name
+    description
+    starCount
+    description
+    createdAt
+    updatedAt
+    languages
+  }
+}
+
+============================================================================
+
+{
+  "platform": "BITBUCKET",
+  "settings": {
+    "repoCount": 5,
+    "maxMRs": 5,
+    "searchTerm": "",
+    "programmingLanguage": "java"
+  }
+}

@@ -1,0 +1,10 @@
+mutation ExportCsv($jobId: String!, $localExport: Boolean!) {
+  exportCsv(jobId: $jobId, localExport: $localExport)
+}
+
+============================================================================
+
+{
+  "jobId": "xxx",
+  "localExport": false
+}
