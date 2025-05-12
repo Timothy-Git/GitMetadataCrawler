@@ -1,8 +1,22 @@
 # GitMetadataCrawler
+A universal tool for crawling Git repository metadata using GraphQL.
 
-This project is a tool for collecting and analyzing metadata from GitHub, GitLab, and Bitbucket repositories using their APIs.
+## Abstract
+
+The collection of research data in software development is a central challenge. The intention of my work is to universally collect metadata of repositories from different Git platforms, process it in a standardized way and make it available to researchers for further analysis. To achieve this, a tool is being developed that enables user-specific queries using GraphQL.
 
 ## Installation
+
+**Clone the repository:**
+   ```sh
+   git clone https://github.com/Timothy-Git/GitMetadataCrawler
+   ```
+
+**(Recommended) Create a virtual environment:**
+   ```sh
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   ```
 
 **Install dependencies:**
    ```sh
@@ -39,8 +53,8 @@ Add your tokens to the `.env` file. Multiple tokens can be separated with a comm
 
 1. **Start the server:**
    ```sh
-   cd backend/app
-   python main.py
+   cd backend
+   python app/main.py
    ```
    The API will be available at `http://localhost:5000/graphql`.
 
