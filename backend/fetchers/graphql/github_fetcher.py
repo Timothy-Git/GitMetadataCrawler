@@ -21,7 +21,7 @@ class GitHubFetcher(BaseGraphQLFetcher):
         "name": "name",
         "fullName": "nameWithOwner",
         "description": "description",
-        "starCount": "stargazers.totalCount",
+        "starCount": "stargazerCount",
         "createdAt": "createdAt",
         "updatedAt": "updatedAt",
         "languages": "primaryLanguage.name",
